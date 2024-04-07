@@ -1,11 +1,9 @@
 import importlib
 import asyncio
-from AniPlay import app
+import os
 from pyrogram import idle
+from AniPlay import app
 from AniPlay.plugins import ALL_MODULES
-
-loop = asyncio.get_event_loop()
-
 
 async def init():
     for module in ALL_MODULES:
@@ -17,9 +15,8 @@ async def init():
     await idle()
     print("[INFO]: BOT STOPPED")
     await app.stop()
-    for task in asyncio.all_tasks():
-        task.cancel()
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
+    loop = asyncio.get_event_loop()
     loop.run_until_complete(init())
+    loop.run_forever()
