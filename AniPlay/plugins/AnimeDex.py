@@ -8,14 +8,14 @@ class AnimeDex:
         pass
 
     def search(query):
-        url = "https://api.anime-dex.workers.dev/search/" + str(
+        url = "https://api3.mohanishx1.workers.dev/search/" + str(
             urllib.parse.quote(query)
         )
         data = requests.get(url).json()["results"]
         return data
 
     def anime(id):
-        data = requests.get("https://api.anime-dex.workers.dev/anime/" + id).json()[
+        data = requests.get("https://api3.mohanishx1.workers.dev/anime/" + id).json()[
             "results"
         ]
         if data["source"] != "gogoanime":
@@ -36,7 +36,7 @@ class AnimeDex:
         return img, text, data["episodes"]
 
     def episode(id):
-        data = requests.get("https://api.anime-dex.workers.dev/episode/" + id).json()[
+        data = requests.get("https://api3.mohanishx1.workers.dev/episode/" + id).json()[
             "results"
         ]
         text = data["name"]
@@ -49,7 +49,7 @@ class AnimeDex:
         return text, surl, murl
 
     def download(id):
-        data = requests.get("https://api.anime-dex.workers.dev/download/" + id).json()[
+        data = requests.get("https://api3.mohanishx1.workers.dev/download/" + id).json()[
             "results"
         ]
         return data
