@@ -11,3 +11,5 @@ RUN pip install -U -r requirements.txt
 
 # Run the Python app
 CMD ["python", "-m","AniPlay"]
+
+
